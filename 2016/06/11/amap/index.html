@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
+
+<title>amap</title>
+<meta name="author" content="Jason Hu">
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="a Info-Gathering tool">
+
+<link rel="icon" href="/images/favicon.png">
+
+<link rel="stylesheet" href="/css/style.css">
+
+  </head>
+  <body>
+    <aside id="sidebar">
+  <nav id="tags">
+    <a href="http://kalitools.com" id="avatar" style="background-image:url(/images/favicon.png)"></a>
+    <ul id="tags__ul">
+      <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
+      
+      <li id="信息收集" class="tags__li tags-btn">信息收集</li>
+      
+    </ul>
+    <div id="tags__bottom">
+      <a href="http://github.com/jasonrw" rel="nofollow" id="icon-github" target="_blank" class="tags-btn fontello"></a>
+      <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=122605211&amp;site=qq&amp;menu=yes" rel="nofollow" id="icon-qq" target="_blank" class="tags-btn fontello"></a>
+    </div>
+  </nav> <!-- end #tags -->
+  <div id="posts-list">
+    <form action="#" id="search-form" target="_blank">
+      <a href="/" id="mobile-avatar" style="background-image:url(/images/favicon.png)"></a>
+      <input id="search-input" type="text" placeholder="找不到想要的，试试戳一下这里！" />
+    </form>
+    <nav id="pl__container">
+      
+            
+                <a class="信息收集 pl__all" href="/2016/06/11/acccheck/" title="acccheck">
+                  <span class="pl__circle"></span><span class="pl__title">acccheck</span><span class="pl__date">2016-06-11</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/06/11/ace/" title="Ace">
+                  <span class="pl__circle"></span><span class="pl__title">Ace</span><span class="pl__date">2016-06-11</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/06/11/amap/" title="amap">
+                  <span class="pl__circle"></span><span class="pl__title">amap</span><span class="pl__date">2016-06-11</span>
+                </a>
+            
+      
+    </nav>
+  </div> <!-- end #posts-list -->
+</aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2016-06-11">amap</h1>
+  <p><strong>作者：van Hauser and DJ RevMoon</strong></p>
+<p><strong>License: Other</strong></p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Amap是第一个用于渗透测试的“下一代”扫描器，主要用于软件不在其常用的端口运行的情况，甚至它可以用于不基于“ASCII”开发的软件。它的工作原理主要是发送软件的触发包（Trigger Packets），然后根据端口的返回包确定软件和软件版本。</p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><a href="http://www.thc.org/thc-amap/" target="_blank" rel="external">Amap 主页</a></p>
+<p><a href="http://git.kali.org/gitweb/?p=packages/amap.git;a=summary" target="_blank" rel="external">Kali 项目主页</a></p>
+<h3 id="Amap中包含的工具"><a href="#Amap中包含的工具" class="headerlink" title="Amap中包含的工具"></a>Amap中包含的工具</h3><ul>
+<li>amapcrap - 向UDP、TCP、SSL端口发送一段随机的数据并确认其返回值</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># amapcrap</span></span><br><span class="line">amapcrap v5.4 (c) 2011 by van Hauser/THC &amp;lt;vh@thc.org&amp;gt;</span><br><span class="line"></span><br><span class="line">Syntax: amapcrap [-S] [-u] [-m 0ab] [-M min,max] [-n connects] [-N delay] [-w delay] [<span class="_">-e</span>] [-v] TARGET PORT</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">-S use SSL after TCP connect (not usuable with -u)</span><br><span class="line">-u use UDP protocol (default: TCP) (not usable with -c)</span><br><span class="line">-n connects maximum number of connects (default: unlimited)</span><br><span class="line">-N delay delay between connects <span class="keyword">in</span> ms (default: 0)</span><br><span class="line">-w delay delay before closing the port (default: 250)</span><br><span class="line"><span class="_">-e</span> <span class="keyword">do</span> NOT stop when a response was made by the server</span><br><span class="line">-v verbose mode</span><br><span class="line">-m 0ab send as random crap:0-nullbytes, a-letters+spaces, b-binary</span><br><span class="line">-M min,max minimum and maximum length of random crap</span><br><span class="line">TARGET PORT target (ip or dns) and port to send random crap</span><br><span class="line"></span><br><span class="line">This tool sends random data to a silent port to illicit a response, <span class="built_in">which</span> can</span><br><span class="line"><span class="keyword">then</span> be used within amap <span class="keyword">for</span> future detection. It outputs proper amap</span><br><span class="line">appdefs definitions. Note: by default all modes are activated (0:10%, a:40%,</span><br><span class="line">b:50%). Mode <span class="string">'a'</span> always sends one line with letters and spaces <span class="built_in">which</span> end with</span><br><span class="line">\r\n. Visit our homepage at http://www.thc.org</span><br></pre></td></tr></table></figure>
+<ul>
+<li>amap - 主程序：“下一代扫描器”</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># amap</span></span><br><span class="line">amap v5.4 (c) 2011 by van Hauser &amp;lt;vh@thc.org&amp;gt; www.thc.org/thc-amap</span><br><span class="line">Syntax: amap [-A|-B|-P|-W] [-1buSRHUdqv] [[-m] -o ] [-D ] [-t/-T sec] [-c cons] [-C retries] [-p proto] [-i ] [target port [port] ...]</span><br><span class="line">Modes:</span><br><span class="line">-A Map applications: send triggers and analyse responses (default)</span><br><span class="line">-B Just grab banners, <span class="keyword">do</span> not send triggers</span><br><span class="line">-P No banner or application stuff - be a (full connect) port scanner</span><br><span class="line">Options:</span><br><span class="line">-1 Only send triggers to a port until 1st identification. Speeeeed!</span><br><span class="line">-6 Use IPv6 instead of IPv4</span><br><span class="line">-b Print ascii banner of responses</span><br><span class="line">-i FILE Nmap machine readable outputfile to <span class="built_in">read</span> ports from</span><br><span class="line">-u Ports specified on commandline are UDP (default is TCP)</span><br><span class="line">-R Do NOT identify RPC service</span><br><span class="line">-H Do NOT send application triggers marked as potentially harmful</span><br><span class="line">-U Do NOT dump unrecognised responses (better <span class="keyword">for</span> scripting)</span><br><span class="line"><span class="_">-d</span> Dump all responses</span><br><span class="line">-v Verbose mode, use twice (or more!) <span class="keyword">for</span> debug (not recommended :-)</span><br><span class="line">-q Do not report closed ports, and <span class="keyword">do</span> not <span class="built_in">print</span> them as unidentified</span><br><span class="line">-o FILE [-m] Write output to file FILE, -m creates machine readable output</span><br><span class="line">-c CONS Amount of parallel connections to make (default 32, max 256)</span><br><span class="line">-C RETRIES Number of reconnects on connect timeouts (see -T) (default 3)</span><br><span class="line">-T SEC Connect timeout on connection attempts <span class="keyword">in</span> seconds (default 5)</span><br><span class="line">-t SEC Response <span class="built_in">wait</span> timeout <span class="keyword">in</span> seconds (default 5)</span><br><span class="line">-p PROTO Only send triggers <span class="keyword">for</span> this protocol (e.g. ftp)</span><br><span class="line">TARGET PORT The target address and port(s) to scan (additional to -i)</span><br><span class="line">amap is a tool to identify application protocols on target ports.</span><br><span class="line">Note: this version was NOT compiled with SSL support!</span><br><span class="line">Usage hint: Options <span class="string">"-bqv"</span> are recommended, add <span class="string">"-1"</span> <span class="keyword">for</span> fast/rush checks.</span><br></pre></td></tr></table></figure>
+<h3 id="用法示例"><a href="#用法示例" class="headerlink" title="用法示例"></a>用法示例</h3><p>扫描<em>192.168.1.15</em>上的<em>80</em>端口，使用amap推荐的<strong>-bqv</strong>。<br><strong>b</strong>:显示收到的内容名称<br><strong>q</strong>:不显示关闭的端口<br><strong>v</strong>:显示扫描详细状态和进度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># amap -bqv 192.168.1.15 80</span></span><br><span class="line">Using trigger file /etc/amap/appdefs.trig ... loaded 30 triggers</span><br><span class="line">Using response file /etc/amap/appdefs.resp ... loaded 346 responses</span><br><span class="line">Using trigger file /etc/amap/appdefs.rpc ... loaded 450 triggers</span><br><span class="line"></span><br><span class="line">amap v5.4 (www.thc.org/thc-amap) started at 2014-05-13 19:07:16 - APPLICATION MAPPING mode</span><br><span class="line"></span><br><span class="line">Total amount of tasks to perform <span class="keyword">in</span> plain connect mode: 23</span><br><span class="line">Protocol on 192.168.1.15:80/tcp (by trigger ssl) matches http - banner: \n\n501 Method Not Implemented\n\n</span><br><span class="line">&lt;h1&gt;Method Not Implemented&lt;/h1&gt;</span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">to /index.html not supported.</span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">&lt;hr /&gt;</span><br><span class="line"></span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">&lt;address&gt;Apache/2.2.22 (Debian) Server at 12</span><br><span class="line">Protocol on 192.168.1.15:80/tcp (by trigger ssl) matches http-apache-2 - banner: \n\n501 Method Not Implemented\n\n&lt;/address&gt;</span><br><span class="line">&lt;h1&gt;Method Not Implemented&lt;/h1&gt;</span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">to /index.html not supported.</span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">&lt;hr /&gt;</span><br><span class="line"></span><br><span class="line">\n</span><br><span class="line"></span><br><span class="line">&lt;address&gt;Apache/2.2.22 (Debian) Server at 12</span><br><span class="line">Waiting <span class="keyword">for</span> timeout on 19 connections ...&lt;/address&gt;amap v5.4 finished at 2014-05-13 19</span><br></pre></td></tr></table></figure></p>
+
+</article>
+<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+<script src="/js/js-lib.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/codeStyle/idea.css" />
+  <script src="/js/highlight.pack.js" type="text/javascript"></script>
+
+
+  <div id="post__action">
+      <a id="icon-heart" class="fontello" href="javascript:donate();"></a>
+  </div>
+  <script src="/layer/layer.js" type="text/javascript"></script>
+  <script src="/layer/extend/layer.ext.js" type="text/javascript"></script>
+
+
+<!-- 多说评论框 start -->
+
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+<!-- 多说公共JS代码 end -->
+
+        <p id="copyright">由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-ttstyle" target="_blank">TTStyle</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="http://github.com/jasonrw" target="_blank">GitHub</a>提供强力驱动</p>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?adcabf676b67035e99f73a59195b5722";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+      </div>
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">目录</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
