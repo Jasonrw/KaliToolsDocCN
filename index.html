@@ -70,6 +70,10 @@
                   <span class="pl__circle"></span><span class="pl__title">braa</span><span class="pl__date">2016-06-13</span>
                 </a>
             
+                <a class="信息收集 pl__all" href="/2016/06/19/CDPSnarf/" title="CDPSnarf">
+                  <span class="pl__circle"></span><span class="pl__title">CDPSnarf</span><span class="pl__date">2016-06-19</span>
+                </a>
+            
       
             
                 <a class="密码破解 pl__all" href="/2016/06/16/crunch/" title="crunch">
@@ -85,78 +89,31 @@
       <div id="pjax">
         
     <article id="post__content">
-      <h1 id="post__title" data-identifier="2016-06-16">crunch</h1>
-      <p><strong>作者: bofh28<br>Licese: GPLv2</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Crunch 是一个字典生成工具,你可以通过自定义的元素和规则来生成你认为最有可能包含真正密码的字典。<br>特性：</p>
-<ul>
-<li>可以生成单纯的字符排列组合，也可以生成字符串的排列组合</li>
-<li>可以将结果输出成指定行数的多个文件</li>
-<li>可以继续上次的生成进度（有限制）</li>
-<li>元素支持数字或者符号</li>
-<li>元素支持大小写字母</li>
-<li>生成过程中支持进度显示</li>
-<li>支持根据表达式生成字典 @,%^</li>
-<li>支持unicode编码</li>
+      <h1 id="post__title" data-identifier="2016-06-19">CDPSnarf</h1>
+      <p><strong>作者：Tasos “Zapotek” Laskos<br>License: GPLv2</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>CDPSnarf 全称 Cisco Discovery Protocol Sniffer，从名字上可以看出来，这是一款用来扫描Cisco设备的工具。<br>其工作原理主要是利用Cisco的<a href="https://en.wikipedia.org/wiki/Cisco_Discovery_Protocol" target="_blank" rel="external">CDP协议</a>，来发现连接Cisco设备的设备的相关信息（CDP协议中包含），包括IP地址、操作系统及其版本、路由信息等等。所有的Cisco设备都支持CDP协议。实际上它就是个接受Cisco设备发送的CDP协议数据包的软件，然后通过解析数据包来得到设备的信息。协议包中的包含的信息可以参考下面的<em>特性</em>,或者<a href="https://en.wikipedia.org/wiki/Cisco_Discovery_Protocol" target="_blank" rel="external">CDP-wiki</a>。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>设备源的MAC地址信息</li>
+<li>CDP协议的版本号</li>
+<li>TTL</li>
+<li>设备的ID号</li>
+<li>软件版本</li>
+<li>平台版本</li>
+<li>地址信息</li>
+<li>端口号</li>
+<li>功能</li>
+<li>复合</li>
+<li>将输出保存成PCAP格式的文件</li>
+<li>从PCAP格式文件中读</li>
+<li>Debugging 协议数据包</li>
+<li>用IPv4和IPv6的协议测试</li>
 </ul>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://sourceforge.net/projects/crunch-wordlist" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/crunch.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
-<h2 id="crunch中包含的工具"><a href="#crunch中包含的工具" class="headerlink" title="crunch中包含的工具"></a>crunch中包含的工具</h2><ul>
-<li>crunch: 根据你自己的需求制定特异的字典</li>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/Zapotek/cdpsnarf" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/cdpsnarf.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><ul>
+<li>cdpsnarf: 生成CDP信息的网络扫描器</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># crunch</span></span><br><span class="line">crunch version 3.5</span><br><span class="line"></span><br><span class="line">Crunch can create a wordlist based on criteria you specify.  The outout from crunch can be sent to the screen, file, or to another program.</span><br><span class="line"></span><br><span class="line">Usage: crunch &lt;min&gt; &lt;max&gt; [options]</span><br><span class="line"><span class="built_in">where</span> min and max are numbers</span><br><span class="line"></span><br><span class="line">Please refer to the man page <span class="keyword">for</span> instructions and examples on how to use crunch.</span><br></pre></td></tr></table></figure>
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>crunch在说明文档里（<code>man crunch</code>）自带了20个示例</p>
-<ul>
-<li>Example 1</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">crunch 1 2</span><br><span class="line">Crunch will now generate the following amount of data: 2080 bytes</span><br><span class="line">0 MB</span><br><span class="line">0 GB</span><br><span class="line">0 TB</span><br><span class="line">0 PB</span><br><span class="line">Crunch will now generate the following number of lines: 702 </span><br><span class="line">a</span><br><span class="line">...(此处省略700行，下面同样是省略大部分字典信息)</span><br><span class="line">zz</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 2</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># crunch 1 2 abc</span></span><br><span class="line">Crunch will now generate the following amount of data: 33 bytes</span><br><span class="line">0 MB</span><br><span class="line">0 GB</span><br><span class="line">0 TB</span><br><span class="line">0 PB</span><br><span class="line">Crunch will now generate the following number of lines: 12 </span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">aa</span><br><span class="line">ab</span><br><span class="line">ac</span><br><span class="line">ba</span><br><span class="line">bb</span><br><span class="line">bc</span><br><span class="line">ca</span><br><span class="line">cb</span><br><span class="line">cc</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 3</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># crunch 1 2 ab\</span></span><br><span class="line">Crunch will now generate the following amount of data: 33 bytes</span><br><span class="line">0 MB</span><br><span class="line">0 GB</span><br><span class="line">0 TB</span><br><span class="line">0 PB</span><br><span class="line">Crunch will now generate the following number of lines: 12 </span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">aa</span><br><span class="line">ab</span><br><span class="line">a</span><br><span class="line"></span><br><span class="line">ba</span><br><span class="line">bb</span><br><span class="line">b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a</span><br><span class="line"></span><br><span class="line">b</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 4: 基于charset.lst中的mixalpha-numeric-all-space 项中的元素来生成字典并保存到wordlist.txt中</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 1 8 <span class="_">-f</span> charset.lst mixalpha-numeric-all-space -o wordlist.txt</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 5: 跟Example 4 类似，不过生成的每一项都是根据<code>@@dog@@@</code>这个表达式来的，并且当生成到<code>cbdogaaa</code>的时候结束</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 8 8 <span class="_">-f</span> charset.lst mixalpha-numeric-all-space -o wordlist.txt -t @@dog@@@ <span class="_">-s</span> cbdogaaa</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 6: 用大写字母做为元素来生成字典，并且到<code>BB</code>结束，这个比较适合在生成的密码文件比较大，密码项比较多的时候，用来在<code>BB</code>处停住，然后下一次可以从<code>BB</code>处开始继续生成字典</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 2 3 <span class="_">-f</span> charset.lst ualpha <span class="_">-s</span> BB</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 7: 根据<code>abc</code>三个字母进行排列组合，注意：中间的数字（这里是 4 5）是不起作用的，但是必须有，也就是说你随便写什么数字都可以，结果也不会发生改变</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 4 5 -p abc</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 8: 根据后面的单词排列组合来生成字典，这里的数字也是不会影响结果的</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 4 5 -p dog cat bird</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 9:生成的字典输出文件为6000行，并将每个文件压缩成bzip格式的，其命名为字典文件中第一行 + “-“ + 最后一行 + “.txt.bzip”（可以压缩成由大到小<code>gz</code>  <code>bz2</code> <code>lzma</code>三种格式，压缩的时间则是<code>lzma</code> &gt; <code>bz2</code> &gt; <code>gz</code>）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 1 5 -o START -c 6000 -z bzip2</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 10: 将输出文件分成20M大小一个的文件，文件命名为”第一行” + “-“ + “最后一行” + “.txt”</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 4 5 -b 20mib -o START</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 11: 用<code>-t</code>后面的的字符匹配符号来设置你需要的字典，下面生成的第一个是<code>a1!</code>，最后一个是<code>c3#</code></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 3 3 abc + 123 !@<span class="comment"># -t @%^</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 12: 生成的第一个是 <code>!1a</code>,最后一个是<code>#3c</code></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 3 3 abc + 123 !@<span class="comment"># -t ^%@</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Example 13: <code>+</code>号用来代表后面的字符匹配符对应的默认字符集（<code>@</code> 对应的是 <code>abcdefghijklmnopqrstuvwxyz</code>）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crunch 4 4  + + 123 + -t %%@^</span><br></pre></td></tr></table></figure>
-<p>(未完待续)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># cdpsnarf -h</span></span><br><span class="line">CDPSnarf v0.1.6 [<span class="variable">$Rev</span>: 797 $] initiated.</span><br><span class="line">   Author: Tasos <span class="string">"Zapotek"</span> Laskos</span><br><span class="line">           &lt;tasos.laskos@gmail.com&gt;</span><br><span class="line">              &lt;zapotek@segfault.gr&gt;</span><br><span class="line">   Website: http://github.com/Zapotek/cdpsnarf</span><br><span class="line"></span><br><span class="line">cdpsnarf -i &lt;dev&gt; [-h] [-w savefile] [-r dumpfile] [<span class="_">-d</span>]</span><br><span class="line"></span><br><span class="line">   -i      define the interface to sniff on</span><br><span class="line">   -w      write packets to PCAP dump file</span><br><span class="line">   -r      <span class="built_in">read</span> packets from PCAP dump file</span><br><span class="line">   <span class="_">-d</span>      show debugging information</span><br><span class="line">   -h      show <span class="built_in">help</span> message and <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>在 <code>eth0</code> 网卡上扫描，并把结果写入  <code>cdpsnarf.pcap</code> 文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># cdpsnarf -i eth0 -w cdpsnarf.pcap</span></span><br><span class="line">CDPSnarf v0.1.6 [<span class="variable">$Rev</span>: 797 $] initiated.</span><br><span class="line">   Author: Tasos <span class="string">"Zapotek"</span> Laskos</span><br><span class="line">           &lt;tasos.laskos@gmail.com&gt;</span><br><span class="line">              &lt;zapotek@segfault.gr&gt;</span><br><span class="line">   Website: http://github.com/Zapotek/cdpsnarf</span><br><span class="line"></span><br><span class="line">Reading packets from eth0.</span><br><span class="line">Waiting <span class="keyword">for</span> a CDP packet...</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
 
-<title>Ace</title>
+<title>CDPSnarf</title>
 <meta name="author" content="Jason Hu">
 
 <meta name="keywords" content="undefined">
@@ -88,16 +88,31 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="2016-06-11">Ace</h1>
-  <h1 id="ace-voip"><a href="#ace-voip" class="headerlink" title="ace-voip"></a>ace-voip</h1><p><strong>作者：Sipera VIPER Lab</strong></p>
-<p><strong>License: GPLv3</strong></p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ACE(Automated Corporate Enumerator)(自动化穷举工具）是一个简单但是很强大的工具，它可以模拟一个IP电话来得到目标IP电话的主人的姓名以及一些其他的信息。而VOIP的<code>&quot;Corporate Directory&quot;</code>特性可以让VOIP终端用户通过姓名直接呼叫到其VOIP手机。ACE这个工具就是让攻击者可以穷举列出<code>&quot;Corporate Directory&quot;</code>，这样进行攻击的时候就不仅仅是面对任意的IP地址或者一个声音片段了，而是知道了这个人的名字！ACE可以通过DHCP协议、TFTP协议、HTTP协议进行工作（下载 <code>VOIP Corporate Directory</code>),并输出为一个文本文档</p>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><a href="http://ucsniff.sourceforge.net/ace.html" target="_blank" rel="external">http://ucsniff.sourceforge.net/ace.html</a><br><a href="http://ucsniff.sourceforge.net/ace.html" target="_blank" rel="external">ace-voip项目主页</a></p>
-<p><a href="http://git.kali.org/gitweb/?p=packages/ace-voip.git;a=summary" target="_blank" rel="external">kali ace-voip Repo</a></p>
-<h3 id="ace-voip中包含的工具"><a href="#ace-voip中包含的工具" class="headerlink" title="ace-voip中包含的工具"></a>ace-voip中包含的工具</h3><ul>
-<li>ace </li>
+  <h1 id="post__title" data-identifier="2016-06-19">CDPSnarf</h1>
+  <p><strong>作者：Tasos “Zapotek” Laskos<br>License: GPLv2</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>CDPSnarf 全称 Cisco Discovery Protocol Sniffer，从名字上可以看出来，这是一款用来扫描Cisco设备的工具。<br>其工作原理主要是利用Cisco的<a href="https://en.wikipedia.org/wiki/Cisco_Discovery_Protocol" target="_blank" rel="external">CDP协议</a>，来发现连接Cisco设备的设备的相关信息（CDP协议中包含），包括IP地址、操作系统及其版本、路由信息等等。所有的Cisco设备都支持CDP协议。实际上它就是个接受Cisco设备发送的CDP协议数据包的软件，然后通过解析数据包来得到设备的信息。协议包中的包含的信息可以参考下面的<em>特性</em>,或者<a href="https://en.wikipedia.org/wiki/Cisco_Discovery_Protocol" target="_blank" rel="external">CDP-wiki</a>。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>设备源的MAC地址信息</li>
+<li>CDP协议的版本号</li>
+<li>TTL</li>
+<li>设备的ID号</li>
+<li>软件版本</li>
+<li>平台版本</li>
+<li>地址信息</li>
+<li>端口号</li>
+<li>功能</li>
+<li>复合</li>
+<li>将输出保存成PCAP格式的文件</li>
+<li>从PCAP格式文件中读</li>
+<li>Debugging 协议数据包</li>
+<li>用IPv4和IPv6的协议测试</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~# ace</span><br><span class="line">ACE v1.10: Automated Corporate (Data) Enumerator</span><br><span class="line">Usage: ace [-i interface] [ -m mac address ] [ -t tftp server ip address | -c cdp mode | -v voice vlan id | -r vlan interface | -d verbose mode ]</span><br><span class="line"></span><br><span class="line">-i (Mandatory) Interface for sniffing/sending packets</span><br><span class="line">-m (Mandatory) MAC address of the victim IP phone</span><br><span class="line">-t (Optional) tftp server ip address</span><br><span class="line">-c (Optional) 0 CDP sniff mode, 1 CDP spoof mode</span><br><span class="line">-v (Optional) Enter the voice vlan ID</span><br><span class="line">-r (Optional) Removes the VLAN interface</span><br><span class="line">-d (Optional) Verbose | debug mode</span><br><span class="line"></span><br><span class="line">Example Usages:</span><br><span class="line">Usage requires MAC Address of IP Phone supplied with -m option</span><br><span class="line">Usage: ace -t -m</span><br><span class="line"></span><br><span class="line">Mode to automatically discover TFTP Server IP via DHCP Option 150 (-m)</span><br><span class="line">Example: ace -i eth0 -m 00:1E:F7:28:9C:8e</span><br><span class="line"></span><br><span class="line">Mode to specify IP Address of TFTP Server</span><br><span class="line">Example: ace -i eth0 -t 192.168.10.150 -m 00:1E:F7:28:9C:8e</span><br><span class="line"></span><br><span class="line">Mode to specify the Voice VLAN ID</span><br><span class="line">Example: ace -i eth0 -v 96 -m 00:1E:F7:28:9C:8E</span><br><span class="line"></span><br><span class="line">Verbose mode</span><br><span class="line">Example: ace -i eth0 -v 96 -m 00:1E:F7:28:9C:8E -d</span><br><span class="line"></span><br><span class="line">Mode to remove vlan interface</span><br><span class="line">Example: ace -r eth0.96</span><br><span class="line"></span><br><span class="line">Mode to auto-discover voice vlan ID in the listening mode for CDP</span><br><span class="line">Example: ace -i eth0 -c 0 -m 00:1E:F7:28:9C:8E</span><br><span class="line"></span><br><span class="line">Mode to auto-discover voice vlan ID in the spoofing mode for CDP</span><br><span class="line">Example: ace -i eth0 -c 1 -m 00:1E:F7:28:9C:8E</span><br></pre></td></tr></table></figure>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/Zapotek/cdpsnarf" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/cdpsnarf.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><ul>
+<li>cdpsnarf: 生成CDP信息的网络扫描器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># cdpsnarf -h</span></span><br><span class="line">CDPSnarf v0.1.6 [<span class="variable">$Rev</span>: 797 $] initiated.</span><br><span class="line">   Author: Tasos <span class="string">"Zapotek"</span> Laskos</span><br><span class="line">           &lt;tasos.laskos@gmail.com&gt;</span><br><span class="line">              &lt;zapotek@segfault.gr&gt;</span><br><span class="line">   Website: http://github.com/Zapotek/cdpsnarf</span><br><span class="line"></span><br><span class="line">cdpsnarf -i &lt;dev&gt; [-h] [-w savefile] [-r dumpfile] [<span class="_">-d</span>]</span><br><span class="line"></span><br><span class="line">   -i      define the interface to sniff on</span><br><span class="line">   -w      write packets to PCAP dump file</span><br><span class="line">   -r      <span class="built_in">read</span> packets from PCAP dump file</span><br><span class="line">   <span class="_">-d</span>      show debugging information</span><br><span class="line">   -h      show <span class="built_in">help</span> message and <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>在 <code>eth0</code> 网卡上扫描，并把结果写入  <code>cdpsnarf.pcap</code> 文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># cdpsnarf -i eth0 -w cdpsnarf.pcap</span></span><br><span class="line">CDPSnarf v0.1.6 [<span class="variable">$Rev</span>: 797 $] initiated.</span><br><span class="line">   Author: Tasos <span class="string">"Zapotek"</span> Laskos</span><br><span class="line">           &lt;tasos.laskos@gmail.com&gt;</span><br><span class="line">              &lt;zapotek@segfault.gr&gt;</span><br><span class="line">   Website: http://github.com/Zapotek/cdpsnarf</span><br><span class="line"></span><br><span class="line">Reading packets from eth0.</span><br><span class="line">Waiting <span class="keyword">for</span> a CDP packet...</span><br></pre></td></tr></table></figure></p>
 
 </article>
 <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
