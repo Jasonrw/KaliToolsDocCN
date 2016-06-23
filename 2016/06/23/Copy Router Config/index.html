@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
 
-<title>Tag: enumerator</title>
+<title>Copy Router Config</title>
 <meta name="author" content="Jason Hu">
 
 <meta name="keywords" content="undefined">
@@ -99,7 +99,49 @@
 
     <div id="post">
       <div id="pjax">
-        
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2016-06-23">Copy Router Config</h1>
+  <p><strong><br>作者: muts<br>License: GPLv2
+</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Copy-router-config是一款通过SNMP协议来获取Cisco设备的配置信息的工具（这是我见过的最简单的简介。。。）</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://www.offensive-security.com/" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/copy-router-config.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h2 id="copy-router-config中包含的工具"><a href="#copy-router-config中包含的工具" class="headerlink" title="copy-router-config中包含的工具"></a>copy-router-config中包含的工具</h2><ul>
+<li>copy-router-config.pl</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># copy-router-config.pl</span></span><br><span class="line"></span><br><span class="line"><span class="comment">######################################################</span></span><br><span class="line"><span class="comment"># Copy Cisco Router config  - Using SNMP</span></span><br><span class="line"><span class="comment"># Hacked up by muts - muts@offensive-security.com</span></span><br><span class="line"><span class="comment">#######################################################</span></span><br><span class="line"></span><br><span class="line">Usage : ./copy-copy-config.pl &lt;router-ip&gt; &lt;tftp-serverip&gt; &lt;community&gt;</span><br><span class="line"></span><br><span class="line">Make sure a TFTP server is <span class="built_in">set</span> up, preferably running from /tmp !</span><br></pre></td></tr></table></figure>
+<ul>
+<li>merge-router-config.pl</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># merge-router-config.pl</span></span><br><span class="line"></span><br><span class="line"><span class="comment">######################################################</span></span><br><span class="line"><span class="comment"># Merge Cisco Router config  - Using SNMP</span></span><br><span class="line"><span class="comment"># Hacked up by muts - muts@offensive-security.com</span></span><br><span class="line"><span class="comment">#######################################################</span></span><br><span class="line"></span><br><span class="line">Usage : ./merge-copy-config.pl &lt;router-ip&gt; &lt;tftp-serverip&gt; &lt;community&gt;</span><br><span class="line"></span><br><span class="line">Make sure a TFTP server is <span class="built_in">set</span> up, preferably running from /tmp !</span><br></pre></td></tr></table></figure>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><ol>
+<li>从路由器上（IP:192.168.1.1)下载配置文件到TFTP服务器（IP:192.168.1.15）上,并通过社区认证的方式<code>private</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># copy-router-config.pl 192.168.1.1 192.168.1.15 private</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>从路由器（IP:192.168.1.1）上合并配置文件，并复制到TFTP服务器（IP:192.168.1.15）上，是用社区认证</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># merge-router-config.pl 192.168.1.1 192.168.1.15 private</span></span><br></pre></td></tr></table></figure>
+</article>
+<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+<script src="/js/js-lib.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/codeStyle/idea.css" />
+  <script src="/js/highlight.pack.js" type="text/javascript"></script>
+
+
+  <div id="post__action">
+      <a id="icon-heart" class="fontello" href="javascript:donate();"></a>
+  </div>
+  <script src="/layer/layer.js" type="text/javascript"></script>
+  <script src="/layer/extend/layer.ext.js" type="text/javascript"></script>
+
+
+<!-- 多说评论框 start -->
+
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+<!-- 多说公共JS代码 end -->
 
         <p id="copyright">由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-ttstyle" target="_blank">TTStyle</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="http://github.com/jasonrw" target="_blank">GitHub</a>提供强力驱动</p>
 <!-- 百度统计 -->
