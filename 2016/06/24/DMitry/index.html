@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
 
-<title>Hello World</title>
+<title>DMitry</title>
 <meta name="author" content="Jason Hu">
 
 <meta name="keywords" content="undefined">
 
-<meta name="description " content="null">
+<meta name="description " content="DMitry(Deepmagic Information Gathering Tools 深度信息收集工具)是一个linux下用C语言写的工具。它能够尽可能的获取指定主机目标的信息。基础功能是获取目标的子域名，Email地址，运行时间相关信息，tcp端口，whois信息等等">
 
 <link rel="icon" href="/images/favicon.png">
 
@@ -104,17 +104,26 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="2016-06-10">Hello World</h1>
-  <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+  <h1 id="post__title" data-identifier="2016-06-24">DMitry</h1>
+  <p><strong><br>作者: James Greig<br>License: GPLv3
+</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>DMitry(Deepmagic Information Gathering Tools 深度信息收集工具)是一个linux下用C语言写的工具。它能够尽可能的获取指定主机目标的信息。基础功能是获取目标的子域名，Email地址，运行时间相关信息，tcp端口，whois信息等等</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>软件开源</li>
+<li>可以同时进行一系列的whois查询</li>
+<li>获取运行时的数据，系统和服务器信息</li>
+<li>对指定的机器搜索获取其子域名</li>
+<li>在指定的主机上搜素Email</li>
+<li>对指定的主机搜索其开启的TCP端口</li>
+<li>有模块化系统可以让用户根据需要选择模块</li>
+</ul>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://mor-pah.net/software/dmitry-deepmagic-information-gathering-tool/" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/dmitry.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><ul>
+<li>dmitry :深度信息收集工具</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dmitry -h</span></span><br><span class="line">Deepmagic Information Gathering Tool</span><br><span class="line"><span class="string">"There be some deep magic going on"</span></span><br><span class="line"></span><br><span class="line">dmitry: invalid option -- <span class="string">'h'</span></span><br><span class="line">Usage: dmitry [-winsepfb] [-t 0-9] [-o %host.txt] host</span><br><span class="line">-o Save output to %host.txt or to file specified by -o file</span><br><span class="line">-i Perform a whois lookup on the IP address of a host</span><br><span class="line">-w Perform a whois lookup on the domain name of a host</span><br><span class="line">-n Retrieve Netcraft.com information on a host</span><br><span class="line"><span class="_">-s</span> Perform a search <span class="keyword">for</span> possible subdomains</span><br><span class="line"><span class="_">-e</span> Perform a search <span class="keyword">for</span> possible email addresses</span><br><span class="line">-p Perform a TCP port scan on a host</span><br><span class="line">* <span class="_">-f</span> Perform a TCP port scan on a host showing output reporting filtered ports</span><br><span class="line">* -b Read <span class="keyword">in</span> the banner received from the scanned port</span><br><span class="line">* -t 0-9 Set the TTL <span class="keyword">in</span> seconds when scanning a TCP port ( Default 2 )</span><br><span class="line">*Requires the -p flagged to be passed</span><br></pre></td></tr></table></figure>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>对<code>example.com</code>进行域名的whois搜索（<code>w</code>），IP的whois搜索（<code>i</code>),获取NetCraft信息（<code>n</code>），获取子域名（<code>s</code>),搜索Email地址（<code>e</code>）,获取服务器上开放的TCP端口（<code>p</code>),保存输出到<code>example.txt</code>(<code>o</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dmitry -winsepo example.txt example.com</span></span><br><span class="line">Deepmagic Information Gathering Tool</span><br><span class="line"><span class="string">"There be some deep magic going on"</span></span><br><span class="line"></span><br><span class="line">Writing output to <span class="string">'example.txt'</span></span><br><span class="line"></span><br><span class="line">HostIP:93.184.216.119</span><br><span class="line">HostName:example.com</span><br><span class="line"></span><br><span class="line">Gathered Inet-whois information <span class="keyword">for</span> 93.184.216.119</span><br><span class="line">---------------------------------</span><br></pre></td></tr></table></figure>
 </article>
 <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
 <script src="/js/js-lib.js" type="text/javascript"></script>
