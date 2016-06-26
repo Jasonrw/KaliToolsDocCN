@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
 
-<title>KaliToolsCN - 中文版的KaliTools</title>
+<title>dnmap</title>
 <meta name="author" content="Jason Hu">
 
 <meta name="keywords" content="undefined">
 
-<meta name="description " content="null">
+<meta name="description " content="dnmap是一款基于nmap的分布式扫描工具，它能够用一个集群来对另外一个机群进行扫描。">
 
 <link rel="icon" href="/images/favicon.png">
 
@@ -107,10 +107,9 @@
 
     <div id="post">
       <div id="pjax">
-        
-    <article id="post__content">
-      <h1 id="post__title" data-identifier="2016-06-26">dnmap</h1>
-      <p><strong><br>作者: www.mateslab.com.ar<br>License: GPLv3
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2016-06-26">dnmap</h1>
+  <p><strong><br>作者: www.mateslab.com.ar<br>License: GPLv3
 </strong></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>dnmap是一款基于nmap的分布式扫描工具，它能够用一个集群来对另外一个机群进行扫描。<br>dnmap根据一个基于nmap命令行来构造的文件来确定扫描的方向。<br>dnmap采用的是C/S架构，服务端主要是用来分发任务和汇总扫描状态，客户端主要用来执行扫描任务和记录自身的扫描状态。<br>该工具主要用于你想扫描一个机群时，你自己拥有一个机群（肉鸡）的资源或者你的小伙伴想帮你的情况。</p>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://sourceforge.net/projects/dnmap/" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/dnmap.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
@@ -126,8 +125,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># echo "nmap -F 192.168.1.0/24 -v -n -oA sub1" &gt;&gt; dnmap.txt</span></span><br><span class="line">root@kali:~<span class="comment"># echo "nmap -F 192.168.0.0/24 -v -n -oA sub0" &gt;&gt; dnmap.txt</span></span><br><span class="line">root@kali:~<span class="comment"># dnmap_server -f dnmap.txt</span></span><br><span class="line">+----------------------------------------------------------------------+</span><br><span class="line">| dnmap_server Version 0.6                                             |</span><br><span class="line">| This program is free software; you can redistribute it and/or modify |</span><br><span class="line">| it under the terms of the GNU General Public License as published by |</span><br><span class="line">| the Free Software Foundation; either version 2 of the License, or    |</span><br><span class="line">| (at your option) any later version.                                  |</span><br><span class="line">|                                                                      |</span><br><span class="line">| Author: Garcia Sebastian, eldraco@gmail.com                          |</span><br><span class="line">| www.mateslab.com.ar                                                  |</span><br><span class="line">+----------------------------------------------------------------------+</span><br><span class="line"></span><br><span class="line">=| MET:0:00:00.000544 | Amount of Online clients: 0 |=</span><br></pre></td></tr></table></figure>
 <p>用客户端（别名<code>dnmap-client1</code>）来连接服务端（<code>192.168.1.15</code>）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnmap_client -s 192.168.1.15 -a dnmap-client1</span></span><br><span class="line">+----------------------------------------------------------------------+</span><br><span class="line">| dnmap Client Version 0.6                                             |</span><br><span class="line">| This program is free software; you can redistribute it and/or modify |</span><br><span class="line">| it under the terms of the GNU General Public License as published by |</span><br><span class="line">| the Free Software Foundation; either version 2 of the License, or    |</span><br><span class="line">| (at your option) any later version.                                  |</span><br><span class="line">|                                                                      |</span><br><span class="line">| Author: Garcia Sebastian, eldraco@gmail.com                          |</span><br><span class="line">| www.mateslab.com.ar                                                  |</span><br><span class="line">+----------------------------------------------------------------------+</span><br><span class="line"></span><br><span class="line">Client Started...</span><br><span class="line">Nmap output files stored <span class="keyword">in</span> <span class="string">'nmap_output'</span> directory...</span><br><span class="line">Starting connection...</span><br><span class="line">Client connected succesfully...</span><br><span class="line">Waiting <span class="keyword">for</span> more commands....</span><br><span class="line">        Command Executed: nmap -F 192.168.1.0/24 -v -n -oA sub1</span><br></pre></td></tr></table></figure>
-    </article>
-    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+</article>
+<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
 <script src="/js/js-lib.js" type="text/javascript"></script>
 
   <link rel="stylesheet" type="text/css" href="/css/codeStyle/idea.css" />
@@ -147,8 +146,6 @@
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 
 <!-- 多说公共JS代码 end -->
-
-
 
         <p id="copyright">由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-ttstyle" target="_blank">TTStyle</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="http://github.com/jasonrw" target="_blank">GitHub</a>提供强力驱动</p>
 <!-- 百度统计 -->
