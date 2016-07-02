@@ -42,16 +42,12 @@
     <nav id="pl__container">
       
             
-                <a class="信息收集 pl__all" href="/2016/06/23/Cookie Cadger/" title="Cookie Cadger">
-                  <span class="pl__circle"></span><span class="pl__title">Cookie Cadger</span><span class="pl__date">2016-06-23</span>
-                </a>
-            
                 <a class="信息收集 pl__all" href="/2016/06/19/CDPSnarf/" title="CDPSnarf">
                   <span class="pl__circle"></span><span class="pl__title">CDPSnarf</span><span class="pl__date">2016-06-19</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/23/Copy Router Config/" title="Copy Router Config">
-                  <span class="pl__circle"></span><span class="pl__title">Copy Router Config</span><span class="pl__date">2016-06-23</span>
+                <a class="信息收集 pl__all" href="/2016/06/23/Cookie Cadger/" title="Cookie Cadger">
+                  <span class="pl__circle"></span><span class="pl__title">Cookie Cadger</span><span class="pl__date">2016-06-23</span>
                 </a>
             
                 <a class="信息收集 pl__all" href="/2016/06/19/Cisco-torch/" title="cisco-torch">
@@ -62,24 +58,28 @@
                   <span class="pl__circle"></span><span class="pl__title">CaseFile</span><span class="pl__date">2016-06-14</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/24/DMitry/" title="DMitry">
-                  <span class="pl__circle"></span><span class="pl__title">DMitry</span><span class="pl__date">2016-06-24</span>
-                </a>
-            
-                <a class="信息收集 pl__all" href="/2016/06/11/acccheck/" title="acccheck">
-                  <span class="pl__circle"></span><span class="pl__title">acccheck</span><span class="pl__date">2016-06-11</span>
+                <a class="信息收集 pl__all" href="/2016/06/23/Copy Router Config/" title="Copy Router Config">
+                  <span class="pl__circle"></span><span class="pl__title">Copy Router Config</span><span class="pl__date">2016-06-23</span>
                 </a>
             
                 <a class="信息收集 pl__all" href="/2016/06/11/ace/" title="Ace">
                   <span class="pl__circle"></span><span class="pl__title">Ace</span><span class="pl__date">2016-06-11</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/11/automater/" title="Automater">
-                  <span class="pl__circle"></span><span class="pl__title">Automater</span><span class="pl__date">2016-06-11</span>
+                <a class="信息收集 pl__all" href="/2016/06/11/acccheck/" title="acccheck">
+                  <span class="pl__circle"></span><span class="pl__title">acccheck</span><span class="pl__date">2016-06-11</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/27/dnsenum/" title="dnsenum">
-                  <span class="pl__circle"></span><span class="pl__title">dnsenum</span><span class="pl__date">2016-06-27</span>
+                <a class="信息收集 pl__all" href="/2016/06/24/DMitry/" title="DMitry">
+                  <span class="pl__circle"></span><span class="pl__title">DMitry</span><span class="pl__date">2016-06-24</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/06/12/bing-ip2hosts/" title="bing-ip2hosts">
+                  <span class="pl__circle"></span><span class="pl__title">bing-ip2hosts</span><span class="pl__date">2016-06-12</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/06/11/automater/" title="Automater">
+                  <span class="pl__circle"></span><span class="pl__title">Automater</span><span class="pl__date">2016-06-11</span>
                 </a>
             
                 <a class="信息收集 pl__all" href="/2016/06/13/braa/" title="braa">
@@ -94,8 +94,12 @@
                   <span class="pl__circle"></span><span class="pl__title">dnmap</span><span class="pl__date">2016-06-26</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/12/bing-ip2hosts/" title="bing-ip2hosts">
-                  <span class="pl__circle"></span><span class="pl__title">bing-ip2hosts</span><span class="pl__date">2016-06-12</span>
+                <a class="信息收集 pl__all" href="/2016/06/27/dnsenum/" title="dnsenum">
+                  <span class="pl__circle"></span><span class="pl__title">dnsenum</span><span class="pl__date">2016-06-27</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/07/02/dnsmap/" title="dnsmap">
+                  <span class="pl__circle"></span><span class="pl__title">dnsmap</span><span class="pl__date">2016-07-02</span>
                 </a>
             
       
@@ -113,18 +117,15 @@
       <div id="pjax">
         
     <article id="post__content">
-      <h1 id="post__title" data-identifier="2016-06-12">bing-ip2hosts</h1>
-      <p><strong>作者： Andrew Horton</strong><br><strong>License: GPLv3</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本项目开发基于Bing.com在搜索ip地址的时候能后搜索出来该IP地址上对应的域名，通过模拟在Bing.com上的搜索，并抓取相应的结果。主要用于在渗透测试中的旁站攻击。<br>bing-ip2hosts是用基于linux的bash语言写的，通过对手机版的bing.com访问来获取信息，而并没有用到其API，所以也不需要API KEY。</p>
-<p><strong>(注：由于本软件采用从bing.com下载页面然后用正则表达式匹配的方法来得到结果，而bing.com搜索页现已发生变化，经PO主试验发现该软件并不能正常工作，甚至由于bing.com搜索页面改变导致该软件基于正则表达式的算法也没有了意义。)</strong></p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://www.morningstarsecurity.com/research/bing-ip2hosts/" target="_blank" rel="external">项目主页</a></p>
-<p><a href="http://git.kali.org/gitweb/?p=packages/bing-ip2hosts.git;a=summary" target="_blank" rel="external">Kali 上的项目分支</a></p>
-<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><ul>
-<li>bing-ip2hosts: 基于bing.com来查询IP地址的url信息</li>
+      <h1 id="post__title" data-identifier="2016-06-13">braa</h1>
+      <p><strong>作者： Mateusz’mteg’ Golicz</strong><br><strong>License: GPLv2</strong></p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Braa是一款大众的snmp扫描器，它的主要作用是生成和执行SNMP协议的指令，但是它与<code>net-snmp</code>的<code>snmpget</code> 和<code>snmpwalk</code>不同，它可以非常迅速的一次性对数十甚至上百台机器执行指令，与此同时，不需要太多的系统资源。<br>Braa有它自己的snmp协议栈，所以它不会像<code>net-snmp</code>一样依赖其他SNMP库。<br>它在设计的时候就是为了<strong>快</strong>这个目标设计的，而最后它实现了这个目标，它真的非常的快。不过，为了达到更快的速度（也可能是因为作者太懒），它没有对用ASN.1编码的OID进行解码，所以当你看到各种让你无语的REX<code>[(0-9).]+</code>（eg. <code>1.3.6.1.2.1.1.5.0</code> 就是 <code>system.sysName.0</code> ）不要太惊讶^\^</p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><a href="http://s-tech.elsat.net.pl/" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/braa.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h3 id="braa中包含的工具"><a href="#braa中包含的工具" class="headerlink" title="braa中包含的工具"></a>braa中包含的工具</h3><ul>
+<li>braa:SNMP 扫描器</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># bing-ip2hosts</span></span><br><span class="line">bing-ip2hosts (o.4) by Andrew Horton aka urbanadventurer</span><br><span class="line">Homepage: http://www.morningstarsecurity.com/research/bing-ip2hosts</span><br><span class="line"></span><br><span class="line">Useful <span class="keyword">for</span> web intelligence and attack surface mapping of vhosts during</span><br><span class="line">penetration tests. Find hostnames that share an IP address with your target</span><br><span class="line"><span class="built_in">which</span> can be a hostname or an IP address. This makes use of Microsoft</span><br><span class="line">Bing.com ability to seach by IP address, e.g. <span class="string">"IP:210.48.71.196"</span>.</span><br><span class="line"></span><br><span class="line">Usage: /usr/bin/bing-ip2hosts [OPTIONS] &amp;lt;IP|hostname&amp;gt;</span><br><span class="line"></span><br><span class="line">OPTIONS are:</span><br><span class="line">-n Turn off the progress indicator animation</span><br><span class="line">-t</span><br><span class="line"></span><br><span class="line">&lt;dir&gt;Use this directory instead of /tmp. The directory must exist.</span><br><span class="line">-i Optional CSV output. Outputs the IP and hostname on each line, separated by a comma.</span><br><span class="line">-p Optional http:// prefix output. Useful <span class="keyword">for</span> right-clicking <span class="keyword">in</span> the shell.</span><br><span class="line">&lt;/dir&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># bing-ip2hosts -p microsoft.com</span></span><br><span class="line">[ 65.55.58.201 | Scraping 1 | Found 0 | / ]</span><br><span class="line">http://microsoft.com</span><br><span class="line">http://research.microsoft.com</span><br><span class="line">http://www.answers.microsoft.com</span><br><span class="line">http://www.microsoft.com</span><br><span class="line">http://www.msdn.microsoft.com</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># bing-ip2hosts -p 173.194.33.80</span></span><br><span class="line">[ 173.194.33.80 | Scraping 60-69 of 73 | Found 41 | | ]| / ]</span><br><span class="line">http://asia.google.com</span><br><span class="line">http://desktop.google.com</span><br><span class="line">http://ejabat.google.com</span><br><span class="line">http://google.netscape.com</span><br><span class="line">http://partner-client.google.com</span><br><span class="line">http://picasa.google.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># braa -h</span></span><br><span class="line">braa 0.81 - Mateusz <span class="string">'mteg'</span> Golicz &lt;mtg@elsat.net.pl&gt;, 2003 - 2006</span><br><span class="line">usage: braa [options] [query1] [query2] ...</span><br><span class="line">  -h        Show this help.</span><br><span class="line">  -2        Claim to be a SNMP2C agent.</span><br><span class="line">  -v        Show short summary after doing all queries.</span><br><span class="line">  -x        Hexdump octet-strings</span><br><span class="line">  -t &lt;s&gt;    Wait &lt;s&gt; seconds <span class="keyword">for</span> responses.</span><br><span class="line">  <span class="_">-d</span> &lt;s&gt;    Wait &lt;s&gt; microseconds after sending each packet.</span><br><span class="line">  -p &lt;s&gt;    Wait &lt;s&gt; miliseconds between subsequent passes.</span><br><span class="line">  <span class="_">-f</span> &lt;file&gt; Load queries from file &lt;file&gt; (one by line).</span><br><span class="line">  <span class="_">-a</span> &lt;time&gt; Quit after &lt;time&gt; seconds, independent on what happens.</span><br><span class="line">  -r &lt;rc&gt;   Retry count (default: 3).</span><br><span class="line"></span><br><span class="line">Query format:</span><br><span class="line">  GET:   [community@]iprange[:port]:oid[/id]</span><br><span class="line">  WALK:  [community@]iprange[:port]:oid.*[/id]</span><br><span class="line">  SET:   [community@]iprange[:port]:oid=value[/id]</span><br><span class="line"></span><br><span class="line">Examples:</span><br><span class="line">         public@10.253.101.1:161:.1.3.6.*</span><br><span class="line">         10.253.101.1-10.253.101.255:.1.3.6.1.2.1.1.4.0=sme</span><br><span class="line">         10.253.101.1:.1.3.6.1.2.1.1.1.0/description</span><br><span class="line"></span><br><span class="line">It is also possible to specify multiple queries at once:</span><br><span class="line">         10.253.101.1-10.253.101.255:.1.3.6.1.2.1.1.4.0=sme,.1.3.6.*</span><br><span class="line">         (Will <span class="built_in">set</span> .1.3.6.1.2.1.1.4.0 to <span class="string">'me'</span> and <span class="keyword">do</span> a walk starting from .1.3.6)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Values <span class="keyword">for</span> SET queries have to be prepended with a character specifying the value <span class="built_in">type</span>:</span><br><span class="line">  i      is INTEGER</span><br><span class="line">  a      is IPADDRESS</span><br><span class="line">  s      is OCTET STRING</span><br><span class="line">  o      is OBJECT IDENTIFIER</span><br><span class="line">If the <span class="built_in">type</span> specifier is missing, the value <span class="built_in">type</span> is auto-detected</span><br></pre></td></tr></table></figure>
+<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><p>扫描<code>192.168.1.215</code>上的SNMP协议树并列出所有低于<code>.1.3.6</code>的OIDs：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># braa public@192.168.1.215:.1.3.6.*</span></span><br><span class="line">192.168.1.215:122ms:.1.3.6.1.2.1.1.1.0:Linux redhat.biz.local 2.4.20-8 <span class="comment">#1 Thu Mar 13 17:54:28 EST 2003 i686</span></span><br><span class="line">192.168.1.215:143ms:.1.3.6.1.2.1.1.2.0:.1.3.6.1.4.1.8072.3.2.10</span><br><span class="line">192.168.1.215:122ms:.1.3.6.1.2.1.1.3.0:4051218219</span><br><span class="line">192.168.1.215:122ms:.1.3.6.1.2.1.1.4.0:Root &lt;root@localhost&gt; (configure /etc/snmp/snmp.local.conf)</span><br><span class="line">192.168.1.215:143ms:.1.3.6.1.2.1.1.5.0:redhat.biz.local</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>

@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
 
-<title>Tag: 端口扫描</title>
+<title>dnsmap</title>
 <meta name="author" content="Jason Hu">
 
 <meta name="keywords" content="undefined">
 
-<meta name="description " content="null">
+<meta name="description " content="dnsmap起源于2006年，是受到一个叫做“The Thief No One Saw”的小故事的启发后开发的...">
 
 <link rel="icon" href="/images/favicon.png">
 
@@ -115,7 +115,39 @@
 
     <div id="post">
       <div id="pjax">
-        
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2016-07-02">dnsmap</h1>
+  <p><strong><br>作者: pagvac<br>License: GPLv2
+</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>dnsmap起源于2006年，是受到一个叫做“The Thief No One Saw”的小故事的启发后开发的，这个小故事能在Paul Craig的书《Stealing the Network - How to Own the Bow》中找到。<br>dnsmap 主要用来在渗透测试的信息收集阶段来协助测试网络的基础设施的安全性，它能发现目标的网段，域名，甚至是电话号码等等。<br>子域名穷举在穷举子域名方面也是一项新的技术，尤其是在zone transfer技术失效的时候。</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://code.google.com/p/dnsmap/" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/dnsmap.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><p>dnsmap：DNS暴力穷举工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsmap</span></span><br><span class="line">dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)</span><br><span class="line"></span><br><span class="line">usage: dnsmap &lt;target-domain&gt; [options]</span><br><span class="line">options:</span><br><span class="line">-w &lt;wordlist-file&gt;</span><br><span class="line">-r &lt;regular-results-file&gt;</span><br><span class="line">-c &lt;csv-results-file&gt;</span><br><span class="line"><span class="_">-d</span> &lt;delay-millisecs&gt;</span><br><span class="line">-i &lt;ips-to-ignore&gt; (useful <span class="keyword">if</span> you<span class="string">'re obtaining false positives)</span><br><span class="line"></span><br><span class="line">e.g.:</span><br><span class="line">dnsmap target-domain.foo</span><br><span class="line">dnsmap target-domain.foo -w yourwordlist.txt -r /tmp/domainbf_results.txt</span><br><span class="line">dnsmap target-fomain.foo -r /tmp/ -d 3000</span><br><span class="line">dnsmap target-fomain.foo -r ./domainbf_results.txt</span></span><br></pre></td></tr></table></figure>
+<p>dnsmap-bulk.sh:DNS 域名穷举工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsmap-bulk.sh</span></span><br><span class="line">usage: dnsmap-bulk.sh &lt;domains-file&gt; [results-path]</span><br><span class="line">e.g.:</span><br><span class="line">dnsmap-bulk.sh domains.txt</span><br><span class="line">dnsmap-bulk.sh domains.txt /tmp/</span><br></pre></td></tr></table></figure>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>基于字典文件<code>-w /usr/share/wordlists/dnsmap.txt</code>来扫描<code>example.com</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># echo "example.com" &gt;&gt; domains.txt</span></span><br><span class="line">root@kali:~<span class="comment"># echo "example.org" &gt;&gt; domains.txt</span></span><br><span class="line">root@kali:~<span class="comment"># dnsmap-bulk.sh domains.txt</span></span><br><span class="line">dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)</span><br><span class="line"></span><br><span class="line">[+] searching (sub)domains <span class="keyword">for</span> example.com using built-in wordlist</span><br><span class="line">[+] using maximum random delay of 10 millisecond(s) between requests</span><br></pre></td></tr></table></figure>
+</article>
+<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+<script src="/js/js-lib.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/codeStyle/idea.css" />
+  <script src="/js/highlight.pack.js" type="text/javascript"></script>
+
+
+  <div id="post__action">
+      <a id="icon-heart" class="fontello" href="javascript:donate();"></a>
+  </div>
+  <script src="/layer/layer.js" type="text/javascript"></script>
+  <script src="/layer/extend/layer.ext.js" type="text/javascript"></script>
+
+
+<!-- 多说评论框 start -->
+
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+<!-- 多说公共JS代码 end -->
 
         <p id="copyright">由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-ttstyle" target="_blank">TTStyle</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="http://github.com/jasonrw" target="_blank">GitHub</a>提供强力驱动</p>
 <!-- 百度统计 -->

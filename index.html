@@ -42,16 +42,12 @@
     <nav id="pl__container">
       
             
-                <a class="信息收集 pl__all" href="/2016/06/23/Cookie Cadger/" title="Cookie Cadger">
-                  <span class="pl__circle"></span><span class="pl__title">Cookie Cadger</span><span class="pl__date">2016-06-23</span>
-                </a>
-            
                 <a class="信息收集 pl__all" href="/2016/06/19/CDPSnarf/" title="CDPSnarf">
                   <span class="pl__circle"></span><span class="pl__title">CDPSnarf</span><span class="pl__date">2016-06-19</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/23/Copy Router Config/" title="Copy Router Config">
-                  <span class="pl__circle"></span><span class="pl__title">Copy Router Config</span><span class="pl__date">2016-06-23</span>
+                <a class="信息收集 pl__all" href="/2016/06/23/Cookie Cadger/" title="Cookie Cadger">
+                  <span class="pl__circle"></span><span class="pl__title">Cookie Cadger</span><span class="pl__date">2016-06-23</span>
                 </a>
             
                 <a class="信息收集 pl__all" href="/2016/06/19/Cisco-torch/" title="cisco-torch">
@@ -62,24 +58,28 @@
                   <span class="pl__circle"></span><span class="pl__title">CaseFile</span><span class="pl__date">2016-06-14</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/24/DMitry/" title="DMitry">
-                  <span class="pl__circle"></span><span class="pl__title">DMitry</span><span class="pl__date">2016-06-24</span>
-                </a>
-            
-                <a class="信息收集 pl__all" href="/2016/06/11/acccheck/" title="acccheck">
-                  <span class="pl__circle"></span><span class="pl__title">acccheck</span><span class="pl__date">2016-06-11</span>
+                <a class="信息收集 pl__all" href="/2016/06/23/Copy Router Config/" title="Copy Router Config">
+                  <span class="pl__circle"></span><span class="pl__title">Copy Router Config</span><span class="pl__date">2016-06-23</span>
                 </a>
             
                 <a class="信息收集 pl__all" href="/2016/06/11/ace/" title="Ace">
                   <span class="pl__circle"></span><span class="pl__title">Ace</span><span class="pl__date">2016-06-11</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/11/automater/" title="Automater">
-                  <span class="pl__circle"></span><span class="pl__title">Automater</span><span class="pl__date">2016-06-11</span>
+                <a class="信息收集 pl__all" href="/2016/06/11/acccheck/" title="acccheck">
+                  <span class="pl__circle"></span><span class="pl__title">acccheck</span><span class="pl__date">2016-06-11</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/27/dnsenum/" title="dnsenum">
-                  <span class="pl__circle"></span><span class="pl__title">dnsenum</span><span class="pl__date">2016-06-27</span>
+                <a class="信息收集 pl__all" href="/2016/06/24/DMitry/" title="DMitry">
+                  <span class="pl__circle"></span><span class="pl__title">DMitry</span><span class="pl__date">2016-06-24</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/06/12/bing-ip2hosts/" title="bing-ip2hosts">
+                  <span class="pl__circle"></span><span class="pl__title">bing-ip2hosts</span><span class="pl__date">2016-06-12</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/06/11/automater/" title="Automater">
+                  <span class="pl__circle"></span><span class="pl__title">Automater</span><span class="pl__date">2016-06-11</span>
                 </a>
             
                 <a class="信息收集 pl__all" href="/2016/06/13/braa/" title="braa">
@@ -94,8 +94,12 @@
                   <span class="pl__circle"></span><span class="pl__title">dnmap</span><span class="pl__date">2016-06-26</span>
                 </a>
             
-                <a class="信息收集 pl__all" href="/2016/06/12/bing-ip2hosts/" title="bing-ip2hosts">
-                  <span class="pl__circle"></span><span class="pl__title">bing-ip2hosts</span><span class="pl__date">2016-06-12</span>
+                <a class="信息收集 pl__all" href="/2016/06/27/dnsenum/" title="dnsenum">
+                  <span class="pl__circle"></span><span class="pl__title">dnsenum</span><span class="pl__date">2016-06-27</span>
+                </a>
+            
+                <a class="信息收集 pl__all" href="/2016/07/02/dnsmap/" title="dnsmap">
+                  <span class="pl__circle"></span><span class="pl__title">dnsmap</span><span class="pl__date">2016-07-02</span>
                 </a>
             
       
@@ -113,28 +117,17 @@
       <div id="pjax">
         
     <article id="post__content">
-      <h1 id="post__title" data-identifier="2016-06-27">dnsenum</h1>
-      <p><strong><br>作者: Filip Waeytens, tix tixxDZ<br>License: GPLv2
+      <h1 id="post__title" data-identifier="2016-07-02">dnsmap</h1>
+      <p><strong><br>作者: pagvac<br>License: GPLv2
 </strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>dnsenum是一个perl脚本，它具有多线程的能力，能够穷举目标域名的DNS信息，能够用于旁站攻击</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul>
-<li>得到目标主机的地址（A记录）</li>
-<li>得到DNS</li>
-<li>取得MX记录</li>
-<li>发送AXFR请求给DNS服务器来获取敏感信息</li>
-<li>通过谷歌搜索（<code>allinurl: -www site:domain</code>）取得别名和子域名</li>
-<li>暴力穷举子域名，递归穷举含有NS记录的子域名</li>
-<li>计算C类域名网络范围然后对它们进行WHOIS查询</li>
-<li>根据C类或者WHOIS信息对网络范围内的域名执行逆向LOOKUPS</li>
-<li>写入<code>domain_ips.txt</code>文件</li>
-</ul>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/fwaeytens/dnsenum" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/dnsenum.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
-<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><ul>
-<li>dnsenum</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsenum -h</span></span><br><span class="line">dnsenum.pl VERSION:1.2.3</span><br><span class="line">Usage: dnsenum.pl [Options] &lt;domain&gt;</span><br><span class="line">[Options]:</span><br><span class="line">Note: the brute force <span class="_">-f</span> switch is obligatory.</span><br><span class="line">GENERAL OPTIONS:</span><br><span class="line">  --dnsserver   &lt;server&gt;</span><br><span class="line">            Use this DNS server <span class="keyword">for</span> A, NS and MX queries.</span><br><span class="line">  --enum        Shortcut option equivalent to --threads 5 <span class="_">-s</span> 15 -w.</span><br><span class="line">  -h, --help        Print this <span class="built_in">help</span> message.</span><br><span class="line">  --noreverse       Skip the reverse lookup operations.</span><br><span class="line">  --private     Show and save private ips at the end of the file domain_ips.txt.</span><br><span class="line">  --subfile &lt;file&gt;  Write all valid subdomains to this file.</span><br><span class="line">  -t, --timeout &lt;value&gt; The tcp and udp timeout values <span class="keyword">in</span> seconds (default: 10s).</span><br><span class="line">  --threads &lt;value&gt; The number of threads that will perform different queries.</span><br><span class="line">  -v, --verbose     Be verbose: show all the progress and all the error messages.</span><br><span class="line">GOOGLE SCRAPING OPTIONS:</span><br><span class="line">  -p, --pages &lt;value&gt;   The number of google search pages to process when scraping names,</span><br><span class="line">            the default is 5 pages, the <span class="_">-s</span> switch must be specified.</span><br><span class="line">  <span class="_">-s</span>, --scrap &lt;value&gt;   The maximum number of subdomains that will be scraped from Google (default 15).</span><br><span class="line">BRUTE FORCE OPTIONS:</span><br><span class="line">  <span class="_">-f</span>, --file &lt;file&gt; Read subdomains from this file to perform brute force.</span><br><span class="line">  -u, --update  &lt;a|g|r|z&gt;</span><br><span class="line">            Update the file specified with the <span class="_">-f</span> switch with valid subdomains.</span><br><span class="line">    a (all)     Update using all results.</span><br><span class="line">    g       Update using only google scraping results.</span><br><span class="line">    r       Update using only reverse lookup results.</span><br><span class="line">    z       Update using only zonetransfer results.</span><br><span class="line">  -r, --recursion   Recursion on subdomains, brute force all discovred subdomains that have an NS record.</span><br><span class="line">WHOIS NETRANGE OPTIONS:</span><br><span class="line">  <span class="_">-d</span>, --delay &lt;value&gt;   The maximum value of seconds to <span class="built_in">wait</span> between whois queries, the value is defined randomly, default: 3s.</span><br><span class="line">  -w, --whois       Perform the whois queries on c class network ranges.</span><br><span class="line">             **Warning**: this can generate very large netranges and it will take lot of time to performe reverse lookups.</span><br><span class="line">REVERSE LOOKUP OPTIONS:</span><br><span class="line">  <span class="_">-e</span>, --exclude &lt;regexp&gt;</span><br><span class="line">            Exclude PTR records that match the regexp expression from reverse lookup results, useful on invalid hostnames.</span><br><span class="line">OUTPUT OPTIONS:</span><br><span class="line">  -o --output &lt;file&gt;    Output <span class="keyword">in</span> XML format. Can be imported <span class="keyword">in</span> MagicTree (www.gremwell.com)</span><br></pre></td></tr></table></figure>
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>对域名<code>example.com</code>不做逆向的LOOKUP（<code>-noreverse</code>），并将输出保存到文件（<code>-o mydomain.xml</code>)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsenum --noreverse -o mydomain.xml example.com</span></span><br><span class="line">dnsenum.pl VERSION:1.2.3</span><br><span class="line"></span><br><span class="line">-----   example.com   -----</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Host<span class="string">'s addresses:</span><br><span class="line">__________________</span><br><span class="line"></span><br><span class="line">example.com.                             392      IN    A        93.184.216.119</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Name Servers:</span><br><span class="line">______________</span><br><span class="line"></span><br><span class="line">b.iana-servers.net.                      122      IN    A        199.43.133.53</span><br><span class="line">a.iana-servers.net.                      122      IN    A        199.43.132.53</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Mail (MX) Servers:</span><br><span class="line">___________________</span></span><br></pre></td></tr></table></figure>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>dnsmap起源于2006年，是受到一个叫做“The Thief No One Saw”的小故事的启发后开发的，这个小故事能在Paul Craig的书《Stealing the Network - How to Own the Bow》中找到。<br>dnsmap 主要用来在渗透测试的信息收集阶段来协助测试网络的基础设施的安全性，它能发现目标的网段，域名，甚至是电话号码等等。<br>子域名穷举在穷举子域名方面也是一项新的技术，尤其是在zone transfer技术失效的时候。</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="http://code.google.com/p/dnsmap/" target="_blank" rel="external">项目主页</a><br><a href="http://git.kali.org/gitweb/?p=packages/dnsmap.git;a=summary" target="_blank" rel="external">kali上的项目分支</a></p>
+<h2 id="项目中包含的工具"><a href="#项目中包含的工具" class="headerlink" title="项目中包含的工具"></a>项目中包含的工具</h2><p>dnsmap：DNS暴力穷举工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsmap</span></span><br><span class="line">dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)</span><br><span class="line"></span><br><span class="line">usage: dnsmap &lt;target-domain&gt; [options]</span><br><span class="line">options:</span><br><span class="line">-w &lt;wordlist-file&gt;</span><br><span class="line">-r &lt;regular-results-file&gt;</span><br><span class="line">-c &lt;csv-results-file&gt;</span><br><span class="line"><span class="_">-d</span> &lt;delay-millisecs&gt;</span><br><span class="line">-i &lt;ips-to-ignore&gt; (useful <span class="keyword">if</span> you<span class="string">'re obtaining false positives)</span><br><span class="line"></span><br><span class="line">e.g.:</span><br><span class="line">dnsmap target-domain.foo</span><br><span class="line">dnsmap target-domain.foo -w yourwordlist.txt -r /tmp/domainbf_results.txt</span><br><span class="line">dnsmap target-fomain.foo -r /tmp/ -d 3000</span><br><span class="line">dnsmap target-fomain.foo -r ./domainbf_results.txt</span></span><br></pre></td></tr></table></figure>
+<p>dnsmap-bulk.sh:DNS 域名穷举工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># dnsmap-bulk.sh</span></span><br><span class="line">usage: dnsmap-bulk.sh &lt;domains-file&gt; [results-path]</span><br><span class="line">e.g.:</span><br><span class="line">dnsmap-bulk.sh domains.txt</span><br><span class="line">dnsmap-bulk.sh domains.txt /tmp/</span><br></pre></td></tr></table></figure>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p>基于字典文件<code>-w /usr/share/wordlists/dnsmap.txt</code>来扫描<code>example.com</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@kali:~<span class="comment"># echo "example.com" &gt;&gt; domains.txt</span></span><br><span class="line">root@kali:~<span class="comment"># echo "example.org" &gt;&gt; domains.txt</span></span><br><span class="line">root@kali:~<span class="comment"># dnsmap-bulk.sh domains.txt</span></span><br><span class="line">dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)</span><br><span class="line"></span><br><span class="line">[+] searching (sub)domains <span class="keyword">for</span> example.com using built-in wordlist</span><br><span class="line">[+] using maximum random delay of 10 millisecond(s) between requests</span><br></pre></td></tr></table></figure>
     </article>
     <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
 <script src="/js/js-lib.js" type="text/javascript"></script>
